@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
 #button {
 background-color: #f5f5f5;
 position: absolute;
@@ -12,19 +11,16 @@ right:31%;
 padding: 5px 5px 5px 5px;
 font-family: 'system-ui';
 font-size: 12px;
-color: rgb(59, 59, 59);
+color: rgb(58, 58, 58);
 -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 border-width: 1px;
 border-style: solid;
 border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 }
-
-
 #button:hover {
-  background-color: white; 
+  background-color: white;
 }
-
 #overlay {
   position: absolute;
   display: none;
@@ -42,7 +38,6 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
 #text{
   position: absolute;
   font: 400 11px system-ui;
@@ -52,14 +47,14 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   color: rgb(33,33,33);
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
-  
+
 }
 </style>
 </head>
 <body>
 
 <div id="overlay" onclick="off()">
-  <div id="text">  
+  <div id="text">
   <p>Physical:</p>
   <p>Digital:</p>
   <p>Service:</p>
@@ -67,7 +62,7 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   <div id="button" onclick="off()">CLOSE</button></div>
 </div>
 
-<!-- this is just a temp button until the overlay is in the script --> 
+<!-- this is just a temp button until the overlay is in the script -->
 
   <button onclick="on()">Overlay</button>
 </div>
@@ -76,11 +71,10 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 function on() {
   document.getElementById("overlay").style.display = "block";
 }
-
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
 </script>
-   
+
 </body>
 </html> 
