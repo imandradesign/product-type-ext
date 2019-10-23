@@ -28,3 +28,5 @@
 
 #### Languages
 * JavaScript
+* HTML
+* CSS
