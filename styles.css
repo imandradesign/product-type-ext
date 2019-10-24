@@ -1,0 +1,47 @@
+#button {
+background-color: #f5f5f5;
+position: absolute;
+bottom:5%;
+right:7%;
+width: 80%;
+padding: 5px 5px 5px 5px;
+font-family: 'system-ui';
+font-size: 12px;
+text-align: center;
+color: rgb(58, 58, 58);
+-webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+border-width: 1px;
+border-style: solid;
+border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+}
+#button:hover {
+  background-color: white;
+}
+#overlay {
+  position: absolute;
+  display: none;
+  width: 13%;
+  height: 28%;
+  top: 1%;
+  right: 1%;
+  bottom: 0;
+  background-color: rgba(209,209,209,0.3);
+  z-index: 2;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#text{
+  position: absolute;
+  font: 400 11px system-ui;
+  top:37%;
+  right:-5%;
+  font-size: 15px;
+  color: rgb(33,33,33);
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+
+}
