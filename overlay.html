@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="manifest" href="/manifest.webmanifest">
+<script type="text/javascript" src="json-parse.js"></script>
+<script type="text/javascript" src="background.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 #button {
@@ -56,10 +59,10 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 
 <div id="overlay" onclick="off()">
   <div id="text">
-  <p>Physical Products:</p>
-  <p>Digital Products:</p>
-  <p>Service Products:</p>
-  <p>Gift Cards:</p></div>
+  <p>Physical Products:</p><p id="physicalCount"></p>
+  <p>Digital Products:</p><p id="digitalCount"></p>
+  <p>Service Products:</p><p id="serviceCount"></p>
+  <p>Gift Cards:</p></div><p id="giftCardCount"></p>
   <div id="button" onclick="off()">CLOSE</button></div>
 </div>
 
@@ -69,6 +72,7 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 </div>
 
 <script>
+
 function on() {
   document.getElementById("overlay").style.display = "block";
 }
