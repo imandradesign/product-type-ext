@@ -2,13 +2,23 @@
   "name": "Squarespace Product Type Highlighter",
   "version": "1.0",
     "description": "This is a Chrome browser extension that highlights products on a Squarespace Products Page to view their type when the extension is clicked / enabled.",
-    "permissions": ["activeTab", "debugger"],
+    "permissions": ["activeTab", "debugger", "declarativeContent"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
     },
     "page_action": {
-      "default_popup": "overlay.html"
+      "default_popup": "overlay.html",
+      "default-icon": {
+        "16": "img/box16.jpg",
+        "48": "img/box48.jpg",
+        "128": "img/box128.jpg"
+      }
+    },
+    "icons": {
+      "16": "img/box16.jpg",
+      "48": "img/box48.jpg",
+      "128": "img/box128.jpg"
     },
     "manifest_version": 2
   }
