@@ -33,9 +33,11 @@ var div = document.createElement('div');
 // Generate HTML within div
 div.innerHTML = "<div id='overlay' onclick='off()'>\
   <div id='text'>\
-  <p>Physical Products:</p><p id='physicalCount'></p>\
-  <p>Digital Products:</p><p id='digitalCount'></p>\
-  <p>Service Products:</p><p id='serviceCount'></p>\
-  <p>Gift Cards:</p></div><p id='giftCardCount'></p>\
-  <div id='button' onclick='off()'>CLOSE</button></div>\
+  <p>Physical Products:<span id='physicalCount'></span></p>\
+  <p>Digital Products:<span id='digitalCount'></span></p>\
+  <p>Service Products:<span id='serviceCount'></span></p>\
+  <p>Gift Cards:<span id='giftCardCount'></span></p>\
 </div>";
+
+// Append DIV to the page
+document.body.appendChild(div);

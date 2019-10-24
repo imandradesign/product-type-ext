@@ -5,7 +5,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
     	file: 'json-parse.js'
     });
     chrome.tabs.insertCSS({
-      file: 'blocks.css'
+      file: 'styles.css'
     });
   };
 
