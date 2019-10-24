@@ -1,15 +1,14 @@
 // Setting a constant URL that contains JSON for testing purposes
-let URL = json_url;
 let debug = 1;
 
 // Fetch the JSON from the URL and print logs to console
-const response = await fetch(URL);
-const myJson = await response.json();
+const response = fetch(json_url);
+const myJson = response.json();
 
 // If debug == 1:
 // Print to console, the JSON that was pulled from the URL
 if(debug == 1){
-    console.log("URL used:" + URL);
+    console.log("URL used:" + json_url);
     console.log("JSON from the URL:");
     console.log(myJson);
 }

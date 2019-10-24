@@ -4,7 +4,7 @@
     "description": "This is a Chrome browser extension that highlights products on a Squarespace Products Page to view their type when the extension is clicked / enabled.",
     "permissions": ["activeTab", "debugger"],
     "background": {
-      "scripts": ["background.js", "json-parse.js"],
+      "scripts": ["background.js"],
       "persistent": false
     },
     "page_action": {
