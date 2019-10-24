@@ -1,5 +1,8 @@
-// Setting a constant URL that contains JSON for testing purposes
 let debug = 1;
+
+// Finds page URL with slug and creates JSON URL
+let find_url = window.location.href;
+let json_url = find_url + '?format=json';
 
 // Fetch the JSON from the URL and print logs to console
 const response = fetch(json_url);
