@@ -1,5 +1,6 @@
 
-chrome.browserAction.onClicked.addListener(function(tab){
+document.addEventListener('DOMContentLoaded', function(tab){
+  
   function enable(tab){
     chrome.tabs.executeScript({
     	file: 'json-parse.js'

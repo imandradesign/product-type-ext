@@ -33,10 +33,10 @@ var div = document.createElement('div');
 // Generate HTML within div
 div.innerHTML = "<div id='overlay' onclick='off()'>\
   <div id='text'>\
-  <p>Physical Products:<span id='physicalCount'></span></p>\
-  <p>Digital Products:<span id='digitalCount'></span></p>\
-  <p>Service Products:<span id='serviceCount'></span></p>\
-  <p>Gift Cards:<span id='giftCardCount'></span></p>\
+  <p>Physical Products: <span id='physicalCount'></span></p>\
+  <p>Digital Products: <span id='digitalCount'></span></p>\
+  <p>Service Products: <span id='serviceCount'></span></p>\
+  <p>Gift Cards: <span id='giftCardCount'></span></p>\
 </div>";
 
 // Append DIV to the page
