@@ -1,5 +1,5 @@
 // Setting a constant URL that contains JSON for testing purposes
-let URL = 'https://www.ralphdaub.com/prints?format=json';
+let URL = 'https://imandra-brine.squarespace.com/?format=json';
 let debug = 1;
 
 // Fetch the JSON from the URL and print logs to console
@@ -27,10 +27,10 @@ if(debug == 1){
 
 
 // Initialize the count for each product type.
-let physicalCount = 0;
-let digitalCount = 0;
-let serviceCount = 0;
-let giftCardCount = 0;
+var physicalCount = 0;
+var digitalCount = 0;
+var serviceCount = 0;
+var giftCardCount = 0;
 
 for(var i=0; products[i]; i++){
 
