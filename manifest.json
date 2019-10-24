@@ -10,5 +10,6 @@
     "page_action": {
       "default_popup": "overlay.html"
     },
+    "icon": "barcode.png",
     "manifest_version": 2
   }
