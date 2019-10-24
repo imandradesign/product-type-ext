@@ -6,13 +6,14 @@ Add visible DIV element to display the product count on the page
 var div = document.createElement('div');
 
 // Generate HTML within div
-div.innerHTML = "<div id='overlay' onclick='off()'>\
-  <div id='text'>\
+div.innerHTML = "<div id='prod-type-overlay' onclick='off()'>\
+  <div id='pd-text'>\
   <p>Physical Products: <span id='physicalCount'></span></p>\
   <p>Digital Products: <span id='digitalCount'></span></p>\
   <p>Service Products: <span id='serviceCount'></span></p>\
   <p>Gift Cards: <span id='giftCardCount'></span></p>\
-</div>";
+  </div>\
+  <button id='pd-button' onclick='btn_click()'>CLOSE</button>";
 
 // Append DIV to the page
 document.body.appendChild(div);
@@ -20,10 +21,16 @@ document.body.appendChild(div);
 /**********************************************************
 Finds the JSON URL and finds the product type for each item on the Products Page
 *********************************************************/
+
 // Finds page URL with slug and creates JSON URL
 var json_url = window.location.href + '?format=json';
 
+// Allow "Close" button to function
+function btn_click() {
+  document.getElementById("prod-type-overlay").style.display = "none !important";
+}
 
+// Asynchronus function to fetch JSON data
 async function info() {
     try {
       // Fetch the JSON from the URL
@@ -53,5 +60,7 @@ async function info() {
               giftCardCount ++;
             }
         }
+
+        document.getElementById("physicalCount").innerHTML = physicalCount;
     }
 }

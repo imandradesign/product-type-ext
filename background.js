@@ -27,10 +27,10 @@ chrome.browserAction.onClicked.addListener(function(tab){
 
     chrome.browserAction.setIcon({path: "img/box48-b.png"});
 
-    var determineOverlay = document.getElementById('overlay');
+    var determineOverlay = document.getElementById('prod-type-overlay');
 
     if (determineOverlay !== null){
-      document.getElementById('overlay').remove();
+      document.getElementById('prod-type-overlay').remove();
     }
   };
 });
