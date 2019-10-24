@@ -12,9 +12,7 @@
       "128": "img/box128-b.png"
     },
     "permissions": [
-      "activeTab",
-      "debugger",
-      "tabs"],
+      "activeTab"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
