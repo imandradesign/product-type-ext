@@ -2,23 +2,28 @@
   "name": "Squarespace Product Type Highlighter",
   "version": "1.0",
     "description": "This is a Chrome browser extension that highlights and counts products on a Squarespace Products Page to view their type when the extension is clicked.",
-    "author": ["Imandra McKenzie", "Ralph Daub", "Deb Margarella"],
+    "author": [
+      "Imandra McKenzie",
+      "Ralph Daub",
+      "Deb Margarella"],
     "icons": {
-      "16": "img/box16.png",
-      "48": "img/box48.png",
-      "128": "img/box128.png"
+      "16": "img/box16-b.png",
+      "48": "img/box48-b.png",
+      "128": "img/box128-b.png"
     },
-    "permissions": ["activeTab", "debugger", "tabs"],
+    "permissions": [
+      "activeTab",
+      "debugger",
+      "tabs"],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
     },
-    "page_action": {
-      "default_popup": "overlay.html",
+    "browser_action": {
       "default-icon": {
-        "16": "img/box16.png",
-        "48": "img/box48.png",
-        "128": "img/box128.png"
+        "16": "img/box16-b.png",
+        "48": "img/box48-b.png",
+        "128": "img/box128-b.png"
       }
     },
     "manifest_version": 2

@@ -1,3 +1,26 @@
+/**********************************************************
+Add visible DIV element to display the product count on the page
+*********************************************************/
+
+// Variant to create DIV element
+var div = document.createElement('div');
+
+// Generate HTML within div
+div.innerHTML = "<div id='overlay' onclick='off()'>\
+  <div id='text'>\
+  <p>Physical Products: <span id='physicalCount'></span></p>\
+  <p>Digital Products: <span id='digitalCount'></span></p>\
+  <p>Service Products: <span id='serviceCount'></span></p>\
+  <p>Gift Cards: <span id='giftCardCount'></span></p>\
+</div>";
+
+// Append DIV to the page
+document.body.appendChild(div);
+
+/**********************************************************
+Finds the JSON URL and finds the product type for each item on the Products Page
+*********************************************************/
+
 // Finds page URL with slug and creates JSON URL
 let find_url = window.location.href;
 let json_url = find_url + '?format=json';
@@ -26,18 +49,3 @@ for (var i = 0; products[i]; i++){
       giftCardCount ++;
     }
 }
-
-// Adding DIV to page
-var div = document.createElement('div');
-
-// Generate HTML within div
-div.innerHTML = "<div id='overlay' onclick='off()'>\
-  <div id='text'>\
-  <p>Physical Products: <span id='physicalCount'></span></p>\
-  <p>Digital Products: <span id='digitalCount'></span></p>\
-  <p>Service Products: <span id='serviceCount'></span></p>\
-  <p>Gift Cards: <span id='giftCardCount'></span></p>\
-</div>";
-
-// Append DIV to the page
-document.body.appendChild(div);
