@@ -6,22 +6,21 @@ Add visible DIV element to display the product count on the page
 var div = document.createElement('div');
 
 // Generate HTML within div
-div.innerHTML = "<div id='prod-type-overlay' onclick='btn_click()'>\
+div.innerHTML = "<div id='prod-type-overlay' onclick='off()'>\
   <div id='pd-text'>\
   <p>Physical Products: <span id='physicalCount'></span></p>\
   <p>Digital Products: <span id='digitalCount'></span></p>\
   <p>Service Products: <span id='serviceCount'></span></p>\
   <p>Gift Cards: <span id='giftCardCount'></span></p>\
   </div>\
-  <button id='pd-button' onclick='btn_click()'>CLOSE</button>\
-  </div>";
-
+  <button id='pd-button'>CLOSE</button>";
+  
   "<div id='error-message'>\
   <div id='error-message-text'>\
   <h1>USEAGE ERROR</h1>\
   <p>This tool only works when enabled on a Product Page while logged out.</p>\
   </div>\
-  <div id='error-button' onclick='btn_click()'>CLOSE</button></div>";
+  <div id='error-button' onclick='off()'>CLOSE</button></div>";
 
 // Append DIV to the page
 document.body.appendChild(div);
@@ -34,9 +33,17 @@ Finds the JSON URL and finds the product type for each item on the Products Page
 var json_url = window.location.href + '?format=json';
 
 // Allow "Close" button to function
-function btn_click() {
-  document.getElementById("prod-type-overlay").style.display = "none !important";
-}
+var button = document.getElementById('pd-button');
+
+button.onclick = function() {
+  var div = document.getElementById('prod-type-overlay');
+  if (div.style.display !== 'none') {
+      div.style.display = 'none';
+  }
+  else {
+      div.style.display = 'block';
+  }
+};
 
 // Asynchronus function to fetch JSON data
 async function info() {
@@ -48,7 +55,7 @@ async function info() {
         // Error handling
         alert("This isn't working! Unable to pull JSON information.");
     } finally {
-
+      
       // If the page is not a Product Page (collection type 13), throw an error
       if(myJson['collection']['type'] != 13){
         alert("This is not a Product Page. You must be viewing a Product Page for this to work.")
