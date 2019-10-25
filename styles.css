@@ -31,7 +31,7 @@
   top: 1%;
   right: 1%;
   bottom: 0;
-  background-color: rgb(209,209,209,0.95);
+  background-color: rgb(209,209,209,0.9);
   z-index: 9999;
   border-width: 1px;
   border-style: solid;
@@ -43,8 +43,7 @@
 #pd-text {
   padding-top: 17px;
   padding-left: 12px;
-  font: 400 11px sans-serif;
-  font-size: 15px;
+  font: 400 15px sans-serif;
   color: rgb(65,65,65);
 }
 
@@ -92,8 +91,7 @@
 /* Text within error message */
 #error-message-text {
   position: absolute;
-  font: sans-serif;
-  font-size: 15px !important;
+  font: 400 15px sans-serif;
   text-align: center;
   color: rgb(65, 65, 65);
 }
@@ -101,8 +99,7 @@
 /* Heading 1/Title text in error */
 #error-message-text h1 {
   position: absolute;
-  font: sans-serif;
-  font-size: 25px !important;
+  font: 400 25px sans-serif;
   text-align: center;
   color: rgb(65, 65, 65);
 }
