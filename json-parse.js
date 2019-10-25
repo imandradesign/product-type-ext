@@ -34,8 +34,8 @@ function btn_click() {
 async function info() {
     try {
       // Fetch the JSON from the URL
-      const response = fetch(json_url);
-      const myJson = await response.json();
+      var response = await fetch(json_url);
+      var myJson = await response.json();
     } catch (error) {
         // Error handling
         alert("This isn't working!");
@@ -61,6 +61,12 @@ async function info() {
             }
         }
 
-        document.getElementById("physicalCount").innerHTML = physicalCount;
+        // Display the product type count within the DIV spans
+        document.getElementById("physicalCount").textContent = physicalCount;
+        document.getElementById("digitalCount").textContent = digitalCount;
+        document.getElementById("serviceCount").textContent = serviceCount;
+        document.getElementById("giftCardCount").textContent = giftCardCount;
     }
 }
+
+info();
