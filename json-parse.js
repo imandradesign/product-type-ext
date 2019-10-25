@@ -6,30 +6,15 @@ Add visible DIV element to display the product count on the page
 var div = document.createElement('div');
 
 // Generate HTML within div
-<<<<<<< HEAD
 div.innerHTML = "<div id='prod-type-overlay'>\
-=======
-div.innerHTML = "<div id='prod-type-overlay' onclick='off()'>\
->>>>>>> 01f8a75704771ecddfeca04f5c452a3c119f623e
   <div id='pd-text'>\
   <p>Physical Products: <span id='physicalCount'></span></p>\
   <p>Digital Products: <span id='digitalCount'></span></p>\
   <p>Service Products: <span id='serviceCount'></span></p>\
   <p>Gift Cards: <span id='giftCardCount'></span></p>\
   </div>\
-<<<<<<< HEAD
   <button id='pd-button'>CLOSE</button>\
   </div>";
-=======
-  <button id='pd-button'>CLOSE</button>";
-  
-  "<div id='error-message'>\
-  <div id='error-message-text'>\
-  <h1>USEAGE ERROR</h1>\
-  <p>This tool only works when enabled on a Product Page while logged out.</p>\
-  </div>\
-  <div id='error-button' onclick='off()'>CLOSE</button></div>";
->>>>>>> 01f8a75704771ecddfeca04f5c452a3c119f623e
 
 // Append DIV to the page
 document.body.appendChild(div);
@@ -41,7 +26,6 @@ Finds the JSON URL and finds the product type for each item on the Products Page
 // Finds page URL with slug and creates JSON URL
 var json_url = window.location.href + '?format=json';
 
-<<<<<<< HEAD
 // Allow "Close" buttons to function
 var button = document.getElementById('pd-button');
 
@@ -54,20 +38,6 @@ button.onclick = function() {
 };
 
 
-=======
-// Allow "Close" button to function
-var button = document.getElementById('pd-button');
-
-button.onclick = function() {
-  var div = document.getElementById('prod-type-overlay');
-  if (div.style.display !== 'none') {
-      div.style.display = 'none';
-  }
-  else {
-      div.style.display = 'block';
-  }
-};
->>>>>>> 01f8a75704771ecddfeca04f5c452a3c119f623e
 
 // Asynchronus function to fetch JSON data
 async function info() {
@@ -79,10 +49,6 @@ async function info() {
         // Error handling
         alert("This isn't working! Unable to pull JSON information.");
     } finally {
-<<<<<<< HEAD
-=======
-      
->>>>>>> 01f8a75704771ecddfeca04f5c452a3c119f623e
       // If the page is not a Product Page (collection type 13), throw an error
       if (myJson['collection']['type'] != 13){
         var determineOverlay = document.getElementById('prod-type-overlay');
