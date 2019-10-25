@@ -57,12 +57,11 @@ async function info() {
           document.getElementById('prod-type-overlay').remove();
         }
 
-        console.log("Not a products page");
+        // Create HTML error message pop up when visitor isn't on a Squarespace Products Page
         var error_msg = document.createElement('div');
 
         div.innerHTML = "<div id='error-message'>\
         <div id='error-message-text'>\
-        \
         <p>This tool only works when enabled on a Product Page while logged out.</p>\
         </div>\
         <button id='error-button'>CLOSE</button>\
@@ -70,6 +69,7 @@ async function info() {
 
         document.body.appendChild(error_msg);
 
+        // Function to properly remove injected HTML for error when "Close" button is clicked
         var error_button = document.getElementById('error-button');
 
         error_button.onclick = function() {
@@ -94,13 +94,27 @@ async function info() {
         var giftCardCount = 0;
 
         for (var i = 0; products[i]; i++){
+          let prodId = products[i].id;
+          var element = document.querySelector('[data-item-id="' + prodId + '"]');
+          var elementCss = "[data-item-id = '" + prodId + "']";
+
+          var style = document.createElement('style');
+
           if (products[i].productType == 1){
+            document.head.appendChild(style);
+            style.sheet.insertRule(elementCss + '{border: red 2px solid !important;}');
             physicalCount ++;
             } else if (products[i].productType == 2){
+              document.head.appendChild(style);
+              style.sheet.insertRule(elementCss + '{border: blue 2px solid !important;}');
               digitalCount ++;
             } else if (products[i].productType == 3){
+              document.head.appendChild(style);
+              style.sheet.insertRule(elementCss + '{border: yellow 2px solid !important;}');
               serviceCount ++;
             } else if (products[i].productType == 4){
+              document.head.appendChild(style);
+              style.sheet.insertRule(elementCss + '{border: purple 2px solid !important;}');
               giftCardCount ++;
             }
         }
