@@ -1,6 +1,7 @@
 /* This is the "Close" button on the overlay */
 #pd-button {
 background-color: #f5f5f5;
+display: block !important;
 position: absolute;
 bottom: 5%;
 right: 7%;
