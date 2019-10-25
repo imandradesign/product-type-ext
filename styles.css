@@ -1,20 +1,20 @@
 /* This is the "Close" button on the overlay */
 #pd-button {
-background-color: #f5f5f5;
-position: absolute;
-bottom: 5%;
-right: 7%;
-width: 80%;
-padding: 5px 5px 5px 5px;
-font-family: 'system-ui';
-font-size: 12px;
-text-align: center;
-color: rgb(58, 58, 58);
--webkit-transition-duration: 0.4s;
+  background-color: #f5f5f5;
+  position: absolute;
+  bottom: 5%;
+  right: 7%;
+  width: 80%;
+  padding: 5px 5px 5px 5px;
+  font-family: 'system-ui';
+  font-size: 12px;
+  text-align: center;
+  color: rgb(58, 58, 58);
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-border-width: 1px;
-border-style: solid;
-border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 }
 
 /* Hover styles for "Close" button */
@@ -24,30 +24,28 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 
 /* Overlay itself in the top right corner */
 #prod-type-overlay {
-  position: absolute;
-  width: 13%;
-  height: 28%;
+  position: fixed;
+  width: 200px;
+  height: 220px;
   top: 1%;
   right: 1%;
   bottom: 0;
-  background-color: rgba(209,209,209,0.3);
+  background-color: rgb(209,209,209,0.8);
   z-index: 9999;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 2px 4px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.19);
 }
 
 /* Text within the overlay */
 #pd-text {
-  position: absolute;
+  position: fixed;
+  right: 3%;
+  top: 4%;
   font: 400 11px system-ui;
-  top:37%;
-  right:-5%;
   font-size: 15px;
   color: rgb(33,33,33);
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
 }
 
 /* This is the "Close" button for the error message */
@@ -84,13 +82,13 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   top: 1%;
   right: 1%;
   bottom: 0;
-  background-color: rgba(209,209,209,0.3);
+  background-color: rgb(209,209,209,0.3);
   z-index: 2;
   cursor: pointer;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 2px 4px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.19);
 }
 
 /* Text within error message */
@@ -105,5 +103,4 @@ border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   color: rgb(65, 65, 65);
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
-
 }

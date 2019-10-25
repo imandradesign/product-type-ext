@@ -32,6 +32,10 @@ chrome.browserAction.onClicked.addListener(function(tab){
     if (determineOverlay !== null){
       document.getElementById('prod-type-overlay').remove();
     }
+
+    chrome.tabs.insertCSS({
+      file: 'remove.css'
+    })
   };
 });
 
