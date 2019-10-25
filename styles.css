@@ -6,7 +6,7 @@
   right: 7%;
   width: 80%;
   padding: 5px 5px 5px 5px;
-  font-family: 'system-ui';
+  font-family: serif;
   font-size: 12px;
   text-align: center;
   color: rgb(58, 58, 58);
@@ -42,7 +42,7 @@
 #pd-text {
   padding-top: 17px;
   padding-left: 12px;
-  font: 400 11px system-ui;
+  font: 400 11px serif;
   font-size: 15px;
   color: rgb(65,65,65);
 }
@@ -55,7 +55,7 @@
   right: 7%;
   width: 80%;
   padding: 5px 5px 5px 5px;
-  font-family: 'system-ui';
+  font-family: serif;
   font-size: 12px;
   text-align: center;
   letter-spacing: 2px;
@@ -74,16 +74,14 @@
 
 /* Error message styles when the page isn't a Products Page */
 #error-message {
-  position: absolute;
-  display: none;
-  width: 20%;
-  height: 28%;
+  position: fixed;
+  display: block;
+  width: 300px;
+  height: 150px;
   top: 1%;
-  right: 1%;
-  bottom: 0;
-  background-color: rgb(209,209,209,0.3);
-  z-index: 2;
-  cursor: pointer;
+  left: 50%;
+  background-color: rgb(209,209,209,0.8);
+  z-index: 9999;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
@@ -93,13 +91,17 @@
 /* Text within error message */
 #error-message-text {
   position: absolute;
-  font: 400 11px system-ui;
-  top: 40%;
-  left: 50%;
-  width: 300px;
+  font: serif;
+  font-size: 15px !important;
   text-align: center;
-  font-size: 15px;
   color: rgb(65, 65, 65);
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+}
+
+/* Heading 1/Title text in error */
+#error-message-text h1 {
+  position: absolute;
+  font: serif;
+  font-size: 25px !important;
+  text-align: center;
+  color: rgb(65, 65, 65);
 }
