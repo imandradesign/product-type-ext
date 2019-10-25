@@ -40,9 +40,8 @@
 
 /* Text within the overlay */
 #pd-text {
-  position: fixed;
-  right: 3%;
-  top: 4%;
+  padding-top: 17px;
+  padding-left: 12px;
   font: 400 11px system-ui;
   font-size: 15px;
   color: rgb(65,65,65);
