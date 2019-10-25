@@ -62,8 +62,7 @@ async function info() {
 
         div.innerHTML = "<div id='error-message'>\
         <div id='error-message-text'>\
-        <p>This tool only works when enabled on a Product Page while logged out.</p>\
-        </div>\
+        <p>This tool only works when enabled on a Product Page while logged out.</p>        </div>\
         <button id='error-button'>CLOSE</button>\
         </div>"
 
