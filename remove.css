@@ -1,0 +1,39 @@
+/* This is the "Close" button on the overlay */
+#pd-button {
+
+}
+
+/* Hover styles for "Close" button */
+#pd-button:hover {
+
+}
+
+/* Overlay itself in the top right corner */
+#prod-type-overlay {
+
+}
+
+/* Text within the overlay */
+#pd-text {
+
+}
+
+/* This is the "Close" button for the error message */
+#error-button {
+
+}
+
+/* Hover styles for the error message button */
+#error-button:hover {
+
+}
+
+/* Error message styles when the page isn't a Products Page */
+#error-message {
+
+}
+
+/* Text within error message */
+#error-message-text {
+
+}
