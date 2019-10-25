@@ -14,6 +14,13 @@ div.innerHTML = "<div id='prod-type-overlay' onclick='off()'>\
   <p>Gift Cards: <span id='giftCardCount'></span></p>\
   </div>\
   <button id='pd-button' onclick='btn_click()'>CLOSE</button>";
+  
+  "<div id='error-message'>\
+  <div id='error-message-text'>\
+  <h1>USEAGE ERROR</h1>\
+  <p>This tool only works when enabled on a Product Page while logged out.</p>\
+  </div>\
+  <div id='error-button' onclick='off()'>CLOSE</button></div>";
 
 // Append DIV to the page
 document.body.appendChild(div);
