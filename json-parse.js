@@ -45,10 +45,19 @@ async function info() {
       var myJson = await response.json();
     } catch (error) {
         // Error handling
-        alert("This isn't working!");
+        alert("This isn't working! Unable to pull JSON information.");
     } finally {
+      
+      // If the page is not a Product Page (collection type 13), throw an error
+      if(myJson['collection']['type'] != 13){
+        alert("This is not a Product Page. You must be viewing a Product Page for this to work.")
+      }
+
+      // If the page is a Product Page, continue on.
+      else{
         // After try/catch is done, do this whether there was error or not. Save product['items'] into the variable "products" and print it to console.
         var products = myJson['items'];
+        console.log(products);
 
         // Initialize the count for each product type.
         var physicalCount = 0;
@@ -73,6 +82,7 @@ async function info() {
         document.getElementById("digitalCount").textContent = digitalCount;
         document.getElementById("serviceCount").textContent = serviceCount;
         document.getElementById("giftCardCount").textContent = giftCardCount;
+      }
     }
 }
 
