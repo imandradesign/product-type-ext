@@ -27,18 +27,8 @@ chrome.browserAction.onClicked.addListener(function(tab){
 
     chrome.browserAction.setIcon({path: "img/box48-b.png"});
 
-    chrome.tabs.insertCSS({
-      file: 'remove.css'
-    });
-
     chrome.tabs.executeScript({
-      file: 'remove-overlay.js'
+      file: 'remove.js'
     })
   };
-});
-
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
-	if(changeInfo.status === "loading") {
-		isActive = false;
-	}
 });
