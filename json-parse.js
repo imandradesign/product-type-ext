@@ -1,12 +1,11 @@
 /**********************************************************
 Add visible DIV element to display the product count on the page
 *********************************************************/
-
 // Variant to create DIV element
-var div = document.createElement('div');
+var overlay_div = document.createElement('div');
 
 // Generate HTML within div
-div.innerHTML = "<div id='prod-type-overlay'>\
+overlay_div.innerHTML = "<div id='prod-type-overlay'>\
   <div id='pd-text'>\
   <p>Physical Products: <span id='physicalCount'></span></p>\
   <p>Digital Products: <span id='digitalCount'></span></p>\
@@ -17,7 +16,7 @@ div.innerHTML = "<div id='prod-type-overlay'>\
   </div>";
 
 // Append DIV to the page
-document.body.appendChild(div);
+document.body.appendChild(overlay_div);
 
 /**********************************************************
 Finds the JSON URL and finds the product type for each item on the Products Page
@@ -26,14 +25,15 @@ Finds the JSON URL and finds the product type for each item on the Products Page
 // Finds page URL with slug and creates JSON URL
 var json_url = window.location.href + '?format=json';
 
-// Allow "Close" buttons to function
+// Variable for "Close" button on overlay
 var button = document.getElementById('pd-button');
 
-button.onclick = function() {
-  var determineOverlay = document.getElementById('prod-type-overlay');
+// Variable for overlay
+var determineOverlay = document.getElementById('prod-type-overlay');
 
+button.onclick = function(){
   if (determineOverlay !== null){
-    document.getElementById('prod-type-overlay').remove();
+    determineOverlay.remove();
   }
 };
 
@@ -51,16 +51,12 @@ async function info() {
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
       if (myJson['collection']['type'] != 13){
-        var determineOverlay = document.getElementById('prod-type-overlay');
-
-        if (determineOverlay !== null){
-          document.getElementById('prod-type-overlay').remove();
-        }
+        determineOverlay.remove();
 
         // Create HTML error message pop up when visitor isn't on a Squarespace Products Page
         var error_msg = document.createElement('div');
 
-        div.innerHTML = "<div id='error-message'>\
+        error_msg.innerHTML = "<div id='error-message'>\
         <div id='error-message-text'>\
         <p>This tool only works when enabled on a Product Page while logged out.</p>        </div>\
         <button id='error-button'>CLOSE</button>\
@@ -101,19 +97,19 @@ async function info() {
 
           if (products[i].productType == 1){
             document.head.appendChild(style);
-            style.sheet.insertRule(elementCss + '{border: red 2px solid !important;}');
+            style.sheet.insertRule(elementCss + '{border: red 2px solid}');
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: blue 2px solid !important;}');
+              style.sheet.insertRule(elementCss + '{border: blue 2px solid}');
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: yellow 2px solid !important;}');
+              style.sheet.insertRule(elementCss + '{border: yellow 2px solid}');
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: purple 2px solid !important;}');
+              style.sheet.insertRule(elementCss + '{border: purple 2px solid}');
               giftCardCount ++;
             }
         }
