@@ -10,14 +10,19 @@ if (determineError !== null){
   document.getElementById('error-message').remove();
 }
 
-
-function removeElementsByClass(className){
-    var prodCss = document.getElementsByClassName('prod-colors');
-    while(prodCss.length > 0){
-        prodCss[0].parentNode.removeChild(prodCss[0]);
+function removeColorByClass(className){
+    var element = document.getElementsByClassName('prod-colors');
+    while(element.length > 0){
+        element[0].parentNode.removeChild(element[0]);
     }
 }
 
-removeElementsByClass("prod-colors");
+function removeOpacityByClass(className){
+    var element = document.getElementsByClassName('prod-opacity');
+    while(element.length > 0){
+        element[0].parentNode.removeChild(element[0]);
+    }
+}
 
-console.log(prodCss)
+removeColorByClass("prod-colors");
+removeOpacityByClass("prod-opacity");
