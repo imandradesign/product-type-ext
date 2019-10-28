@@ -25,12 +25,11 @@
 
 /* Error message text is user isn't on a Squarespace Products Page */
 #error-message {
-  padding-top: 35px;
+  padding-top: 45px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
   font-size: 22px;
   font: 400 15px sans-serif;
   color: rgb(65,65,65);
-  background-color: rgb(209,209,209,1);
 }

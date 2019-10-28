@@ -30,7 +30,8 @@ async function info() {
       var myJson = await response.json();
     } catch (error) {
         // Error handling
-        alert("This isn't working! Unable to pull JSON information.");
+        alert("Please log out of Squarespace to use this extension.");
+        document.getElementById("prod-type-overlay").remove();
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
       if (myJson['collection']['type'] != 13){
