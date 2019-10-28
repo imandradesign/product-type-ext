@@ -58,7 +58,7 @@ async function info() {
 
         error_msg.innerHTML = "<div id='error-message'>\
         <div id='error-message-text'>\
-        <p>This tool only works when enabled on a Product Page while logged out.</p>        </div>\
+        <p>This tool only works when enabled on a Products Page while logged out.</p>        </div>\
         <button id='error-button'>CLOSE</button>\
         </div>"
 
@@ -97,19 +97,19 @@ async function info() {
 
           if (products[i].productType == 1){
             document.head.appendChild(style);
-            style.sheet.insertRule(elementCss + '{border: red 2px solid}');
+            style.sheet.insertRule(elementCss + '{outline: 5px solid red; !important;}');
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: blue 2px solid}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid blue; !important;}');
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: yellow 2px solid}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid yellow; !important;}');
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{border: purple 2px solid}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid purple; !important;}');
               giftCardCount ++;
             }
         }
