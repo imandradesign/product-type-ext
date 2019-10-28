@@ -48,14 +48,14 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <p>Physical Products: <span id='physicalCount'></span></p>\
-        <p>Digital Products: <span id='digitalCount'></span></p>\
-        <p>Service Products: <span id='serviceCount'></span></p>\
-        <p>Gift Cards: <span id='giftCardCount'></span></p>\
+        <p style='color:#6D3737;'>Physical Products: <span id='physicalCount'></span></p>\
+        <p style='color:#A39594;'>Digital Products: <span id='digitalCount'></span></p>\
+        <p style='color:#EDBB9C;'>Service Products: <span id='serviceCount'></span></p>\
+        <p style='color:#423E37;'>Gift Cards: <span id='giftCardCount'></span></p>\
         </div>";
 
         var productListCSS = document.createElement('style');
-        productListCSS.innerHTML = "img.loaded {opacity: 0.5;}";
+        productListCSS.innerHTML = "img.loaded {opacity: 0.2;}";
         document.body.appendChild(productListCSS);
 
         // After try/catch is done, do this whether there was error or not. Save product['items'] into the variable "products" and print it to console.
@@ -77,19 +77,19 @@ async function info() {
 
           if (products[i].productType == 1){
             document.head.appendChild(style);
-            style.sheet.insertRule(elementCss + '{outline: 5px solid red; !important; background-color: red !important;}');
+            style.sheet.insertRule(elementCss + '{outline: 5px solid #6D3737; !important; background-color: #6D3737 !important;}');
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid blue; !important; background-color: blue !important}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid #A39594; !important; background-color: #A39594 !important}');
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid yellow; !important; background-color: yellow}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid #EDBB9C; !important; background-color: #EDBB9C}');
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid purple; !important; background-color: purple}');
+              style.sheet.insertRule(elementCss + '{outline: 5px solid #423E37; !important; background-color: #423E37}');
               giftCardCount ++;
             }
         }
