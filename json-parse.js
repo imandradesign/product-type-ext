@@ -6,13 +6,6 @@ var overlay_div = document.createElement('div');
 
 // Generate HTML within div
 overlay_div.innerHTML = "<div id='prod-type-overlay'>\
-  <div id='pd-text'>\
-  <p>Physical Products: <span id='physicalCount'></span></p>\
-  <p>Digital Products: <span id='digitalCount'></span></p>\
-  <p>Service Products: <span id='serviceCount'></span></p>\
-  <p>Gift Cards: <span id='giftCardCount'></span></p>\
-  </div>\
-  <button id='pd-button'>CLOSE</button>\
   </div>";
 
 // Append DIV to the page
@@ -25,18 +18,8 @@ Finds the JSON URL and finds the product type for each item on the Products Page
 // Finds page URL with slug and creates JSON URL
 var json_url = window.location.href + '?format=json';
 
-// Variable for "Close" button on overlay
-var button = document.getElementById('pd-button');
-
 // Variable for overlay
 var determineOverlay = document.getElementById('prod-type-overlay');
-
-button.onclick = function(){
-  if (determineOverlay !== null){
-    determineOverlay.remove();
-  }
-};
-
 
 
 // Asynchronus function to fetch JSON data
@@ -51,33 +34,28 @@ async function info() {
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
       if (myJson['collection']['type'] != 13){
-        determineOverlay.remove();
+        // Create HTML error message when visitor isn't on a Squarespace Products Page
+        var determineOverlay = document.getElementById("prod-type-overlay");
 
-        // Create HTML error message pop up when visitor isn't on a Squarespace Products Page
-        var error_msg = document.createElement('div');
-
-        error_msg.innerHTML = "<div id='error-message'>\
-        <div id='error-message-text'>\
-        <p>This tool only works when enabled on a Products Page while logged out.</p>        </div>\
-        <button id='error-button'>CLOSE</button>\
+        determineOverlay.innerHTML = "<div id='error-message'>\
+        <p>Please navigate to a Squarespace Products Page while logged out.</p>\
         </div>"
-
-        document.body.appendChild(error_msg);
-
-        // Function to properly remove injected HTML for error when "Close" button is clicked
-        var error_button = document.getElementById('error-button');
-
-        error_button.onclick = function() {
-          var determineError = document.getElementById('error-message');
-
-          if (determineError !== null){
-            document.getElementById('error-message').remove();
-          }
-        };
       }
 
       // If the page is a Product Page, continue on.
       else {
+
+        var determineOverlay = document.getElementById("prod-type-overlay");
+
+        determineOverlay.innerHTML = "<div id='pd-text'>\
+        <p>Physical Products: <span id='physicalCount'></span></p>\
+        <p>Digital Products: <span id='digitalCount'></span></p>\
+        <p>Service Products: <span id='serviceCount'></span></p>\
+        <p>Gift Cards: <span id='giftCardCount'></span></p>\
+        </div>";
+
+        // Append DIV to the page
+
         // After try/catch is done, do this whether there was error or not. Save product['items'] into the variable "products" and print it to console.
         var products = myJson['items'];
         console.log(products);
