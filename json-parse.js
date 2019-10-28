@@ -39,20 +39,21 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='error-message'>\
-        <p>Please navigate to a Squarespace Products Page while logged out.</p>\
+        <p style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace Products Page while logged out.</p>\
         </div>"
       }
-
       // If the page is a Product Page, continue on.
       else {
         // Append DIV to the page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <p style='color:#6D3737;'>Physical Products: <span id='physicalCount'></span></p>\
-         <p style='color:#A39594;'>Digital Products: <span id='digitalCount'></span></p>\
-         <p style='color:#EDBB9C;'>Service Products: <span id='serviceCount'></span></p>\
-         <p style='color:#423E37;'>Gift Cards: <span id='giftCardCount'></span></p>\
+        <p style='color:#186976;'>Physical Products: <span id='physicalCount'></span></p>\
+        <p style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></p>\
+        <p style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></p>\
+        <p style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></p>\
+        <hr>\
+        <p style='color:black'>Subscription Products: <span id='subCount'></span></p>\
         </div>";
 
 
@@ -64,6 +65,7 @@ async function info() {
         var digitalCount = 0;
         var serviceCount = 0;
         var giftCardCount = 0;
+        var subscriptionCount = 0;
 
         for (var i = 0; products[i]; i++){
           let prodId = products[i].id;
@@ -81,21 +83,25 @@ async function info() {
 
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
-            prodColor.innerHTML = elementCss + '{outline: 5px solid #6D3737 !important; background-color: #6D3737 !important;};';
+            prodColor.innerHTML = elementCss + '{outline: 5px solid #186976 !important; background-color: #186976 !important;};';
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #A39594 !important; background-color: #A39594 !important};';
+              prodColor.innerHTML = elementCss + '{outline: 5px solid #BCDE28 !important; background-color: #BCDE28 !important};';
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #EDBB9C !important; background-color: #EDBB9C};';
+              prodColor.innerHTML = elementCss + '{outline: 5px solid #3EF5A4 !important; background-color: #3EF5A4};';
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #423E37 !important; background-color: #423E37};';
+              prodColor.innerHTML = elementCss + '{outline: 5px solid #5F0D73 !important; background-color: #5F0D73};';
               giftCardCount ++;
             }
+
+          if (products[i].isSubscribable === true){
+            subscriptionCount ++;
+          }
         }
 
         // Display the product type count within the DIV spans
@@ -103,6 +109,7 @@ async function info() {
         document.getElementById("digitalCount").textContent = digitalCount;
         document.getElementById("serviceCount").textContent = serviceCount;
         document.getElementById("giftCardCount").textContent = giftCardCount;
+        document.getElementById("subCount").textContent = subscriptionCount;
       }
     }
 }

@@ -1,35 +1,39 @@
 /* Overlay itself in the top right corner */
 #prod-type-overlay {
-  position: fixed;
-  display: block;
-  width: 200px;
-  height: 170px;
-  top: 1%;
-  right: 1%;
-  bottom: 0;
-  background-color: rgb(250, 250, 250,0.99);
-  z-index: 9999;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  box-shadow: 0 2px 4px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.19);
+  position: fixed !important;
+  display: block !important;
+  width: 210px !important;
+  height: 200px !important;
+  top: 1% !important;
+  right: 1% !important;
+  bottom: 0 !important;
+  background-color: white !important;
+  z-index: 9999 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186) !important;
+  box-shadow: 0 2px 4px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.19) !important;
 }
 
 /* Text within the overlay for product count */
 #pd-text {
-  padding-top: 25px;
-  padding-left: 12px;
-  font: 400 15px sans-serif !important;
-  color: rgb(65,65,65);
+  padding-top: 25px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  font: 700 Helvetica, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1em !important;
+  color: rgb(65,65,65) !important;
 }
 
 /* Error message text is user isn't on a Squarespace Products Page */
 #error-message {
-  padding-top: 45px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  font-size: 22px;
-  font: 400 15px sans-serif;
+  padding-top: 45px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: center !important;
+  font-size: 22px !important;
+  font: 400 Helvetica, sans-serif !important;
+  line-height: 15px !important;
   color: rgb(65,65,65);
 }
