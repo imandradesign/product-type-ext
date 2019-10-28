@@ -54,13 +54,12 @@ async function info() {
         <p>Gift Cards: <span id='giftCardCount'></span></p>\
         </div>";
 
-        var productListCSS = document.createElement('style');
-        productListCSS.innerHTML = "img.loaded {opacity: 0.5;}";
-        document.body.appendChild(productListCSS);
+        var imageOpacity = document.createElement('style');
+        imageOpacity.innerHTML = "img.loaded {opacity: 0.5;}";
+        document.body.appendChild(imageOpacity);
 
-        // After try/catch is done, do this whether there was error or not. Save product['items'] into the variable "products" and print it to console.
+        // After try/catch is done, do this whether there was error or not. Save product['items'] into the variable "products".
         var products = myJson['items'];
-        console.log(products);
 
         // Initialize the count for each product type.
         var physicalCount = 0;
@@ -73,23 +72,24 @@ async function info() {
           var element = document.querySelector('[data-item-id="' + prodId + '"]');
           var elementCss = "[data-item-id = '" + prodId + "']";
 
-          var style = document.createElement('style');
+          var prodColor = document.createElement('style');
+          prodColor.className = "prod-colors"
 
           if (products[i].productType == 1){
-            document.head.appendChild(style);
-            style.sheet.insertRule(elementCss + '{outline: 5px solid red; !important; background-color: red !important;}');
+            document.head.appendChild(prodColor);
+            prodColor.innerHTML = elementCss + '{outline: 5px solid red; !important; background-color: red !important;}; ' + "img.loaded {opacity: 0.5;}";
             physicalCount ++;
             } else if (products[i].productType == 2){
-              document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid blue; !important; background-color: blue !important}');
+              document.head.appendChild(prodColor);
+              prodColor.innerHTML = elementCss + '{outline: 5px solid blue; !important; background-color: blue !important}; ' + "img.loaded {opacity: 0.5;}";
               digitalCount ++;
             } else if (products[i].productType == 3){
-              document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid yellow; !important; background-color: yellow}');
+              document.head.appendChild(prodColor);
+              prodColor.innerHTML = elementCss + '{outline: 5px solid yellow; !important; background-color: yellow}; ' + "img.loaded {opacity: 0.5;}";
               serviceCount ++;
             } else if (products[i].productType == 4){
-              document.head.appendChild(style);
-              style.sheet.insertRule(elementCss + '{outline: 5px solid purple; !important; background-color: purple}');
+              document.head.appendChild(prodColor);
+              prodColor.innerHTML = elementCss + '{outline: 5px solid purple; !important; background-color: purple}; ' + "img.loaded {opacity: 0.5;}";
               giftCardCount ++;
             }
         }
