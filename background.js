@@ -1,5 +1,33 @@
+// Variable to determine if extension is active or inactive
 var isActive = false;
 
+// Enable browser extension
+function enable(tab){
+  isActive = true;
+
+  chrome.browserAction.setIcon({path: "img/box48.png"});
+
+  chrome.tabs.executeScript({
+    file: 'json-parse.js'
+  });
+
+  chrome.tabs.insertCSS({
+    file: 'styles.css'
+  });
+};
+
+// Disable browser extension
+function disable(tab){
+  isActive = false;
+
+  chrome.browserAction.setIcon({path: "img/box48-b.png"});
+
+  chrome.tabs.executeScript({
+    file: 'remove.js'
+  });
+};
+
+// Clicking the extension icon runs the json-parse.js or remove.js file to enable or disable
 chrome.browserAction.onClicked.addListener(function(tab){
 
   if (isActive === false){
@@ -7,36 +35,11 @@ chrome.browserAction.onClicked.addListener(function(tab){
   } else if (isActive === true){
     disable();
   }
-
-  function enable(tab){
-    isActive = true;
-
-    chrome.browserAction.setIcon({path: "img/box48.png"});
-
-    chrome.tabs.executeScript({
-    	file: 'json-parse.js'
-    });
-
-    chrome.tabs.insertCSS({
-      file: 'styles.css'
-    });
-  };
-
-  function disable(tab){
-    isActive = false;
-
-    chrome.browserAction.setIcon({path: "img/box48-b.png"});
-
-    var determineOverlay = document.getElementById('prod-type-overlay');
-
-    if (determineOverlay !== null){
-      document.getElementById('prod-type-overlay').remove();
-    }
-  };
 });
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+// Disable extension when navigating to a new page
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	if(changeInfo.status === "loading") {
-		isActive = false;
-	}
+    disable();
+  };
 });

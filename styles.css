@@ -1,47 +1,39 @@
-#pd-button {
-background-color: #f5f5f5;
-position: absolute;
-bottom:5%;
-right:7%;
-width: 80%;
-padding: 5px 5px 5px 5px;
-font-family: 'system-ui';
-font-size: 12px;
-text-align: center;
-color: rgb(58, 58, 58);
--webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-border-width: 1px;
-border-style: solid;
-border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-}
-
-#pd-button:hover {
-  background-color: white;
-}
-
+/* Overlay itself in the top right corner */
 #prod-type-overlay {
-  position: absolute;
-  width: 13%;
-  height: 28%;
-  top: 1%;
-  right: 1%;
-  bottom: 0;
-  background-color: rgba(209,209,209,0.3);
-  z-index: 9999;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  position: fixed !important;
+  display: block !important;
+  width: 210px !important;
+  height: 200px !important;
+  top: 1% !important;
+  right: 1% !important;
+  bottom: 0 !important;
+  background-color: white !important;
+  z-index: 9999 !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186) !important;
+  box-shadow: 0 2px 4px 0 rgb(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.19) !important;
 }
-#pd-text {
-  position: absolute;
-  font: 400 11px system-ui;
-  top:37%;
-  right:-5%;
-  font-size: 15px;
-  color: rgb(33,33,33);
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
 
+/* Text within the overlay for product count */
+#pd-text {
+  padding-top: 25px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  font: 700 Helvetica, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1em !important;
+  color: rgb(65,65,65) !important;
+}
+
+/* Error message text is user isn't on a Squarespace Products Page */
+#error-message {
+  padding-top: 45px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: center !important;
+  font-size: 22px !important;
+  font: 400 Helvetica, sans-serif !important;
+  line-height: 15px !important;
+  color: rgb(65,65,65);
 }
