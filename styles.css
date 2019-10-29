@@ -3,8 +3,8 @@
   position: fixed;
   display: block;
   width: 235px;
-  height: 220px;
-  top: 4%;
+  height: 210px;
+  top: 2%;
   right: 1%;
   bottom: 0;
   background-color: white;
@@ -17,17 +17,16 @@
 
 /* Text within the overlay for product count */
 #pd-text {
-  padding-top: 25px;
+  padding-top: 23px;
   padding-left: 12px;
   padding-right: 12px;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1em;
   letter-spacing: 0.7px;
   color: rgb(65,65,65);
-  -webkit-text-stroke-width: 0.2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 0.1px;
 }
 
 /* Error message text is user isn't on a Squarespace Products Page */
@@ -36,7 +35,7 @@
   padding-right: 20px;
   text-align: center;
   font-size: 22px;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 15px;
   color: black;
@@ -44,7 +43,7 @@
 
 /* Adjust style for the words "Products Page" specifically in the error message */
 #pp-error {
-  color: #1FA187;
+  color: #B3E9C7;
 }
 
 /* Adjust styles for the "Subscription Products:" text in the overlay */

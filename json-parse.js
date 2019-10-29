@@ -1,3 +1,16 @@
+// Linking the font using Google Fonts
+var link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('type', 'text/css');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700');
+document.head.appendChild(link);
+
+var link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('type', 'text/css');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto&display=swap');
+document.head.appendChild(link);
+
 /********************************************************
 Add visible DIV element to display the product count on the page
 *****************************************************/
@@ -22,7 +35,7 @@ if(split[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 'Roboto', sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
   <br><br><br><br>\
   <a href='" + baseUrl +
   "' id ='error-url'>Full Products Page Link</a>\
@@ -58,14 +71,14 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 'Roboto', sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
         </div>"
       } else if (myJson['item']) {
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:20px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 'Roboto', sans-serif !important; padding-top:20px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
@@ -74,13 +87,13 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <div style='color:#186976;'>Physical Products: <span id='physicalCount'></span></div>\
+        <div style='color:#5603AD;'>Physical Products: <span id='physicalCount'></span></div>\
         <br>\
-        <div style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></div>\
+        <div style='color:#B2A3FF;'>Digital Products: <span id='digitalCount'></span></div>\
         <br>\
-        <div style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></div>\
+        <div style='color:#B3E9C7;'>Service Products: <span id='serviceCount'></span></div>\
         <br>\
-        <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
+        <div style='color:#FFE2AF;'>Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
         <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
@@ -117,19 +130,19 @@ async function info() {
           // Checks JSON data for the product type and updates the styles for individual products on the page and adjusts the product type counter in the overlay.
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
-            prodColor.innerHTML = elementCss + '{outline: 6px solid #186976 !important; background-color: #186976 !important;};';
+            prodColor.innerHTML = elementCss + '{outline: 6px solid #5603AD !important; background-color: #5603AD !important;};';
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #BCDE28 !important; background-color: #BCDE28 !important};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #B2A3FF !important; background-color: #B2A3FF !important};';
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #3EF5A4 !important; background-color: #3EF5A4};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #B3E9C7 !important; background-color: #B3E9C7};';
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #5F0D73 !important; background-color: #5F0D73};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #FFE2AF !important; background-color: #FFE2AF};';
               giftCardCount ++;
             }
 
