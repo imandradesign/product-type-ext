@@ -67,17 +67,21 @@ async function info() {
         var giftCardCount = 0;
         var subscriptionCount = 0;
 
+        // Loops through JSON data and finds the product type
         for (var i = 0; products[i]; i++){
+          // Sets up a variable that automatically has the correct CSS selector and ID of each individual product
           let prodId = products[i].id;
           var element = document.querySelector('[data-item-id="' + prodId + '"]');
           var elementCss = "[data-item-id = '" + prodId + "']";
 
+          // Variables for adding a new style element
           var prodColor = document.createElement('style');
           prodColor.className = "prod-colors";
 
           var prodOpacity = document.createElement('style');
           prodOpacity.className = "prod-opacity";
 
+          // If an image loads, it changes the opacity to 50% for each image.
           prodOpacity.innerHTML = elementCss + " img.loaded {opacity: 0.5;}";
           document.head.appendChild(prodOpacity);
 
