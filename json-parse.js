@@ -25,8 +25,7 @@ if(split[1] != null){
   determineOverlay.innerHTML = "<div id='error-message' style='font-size:14px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
   <br><br><br>\
   <a href='" + baseUrl +
-  "' id ='error-url'>" + baseUrl +
-  "</a>\
+  "' id ='error-url'>Full Products Page Link</a>\
   </div>"
   }
 else{
