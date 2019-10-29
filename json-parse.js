@@ -22,8 +22,8 @@ if(split[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div id='error-message' style='font-size:14px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
-  <br><br><br>\
+  determineOverlay.innerHTML = "<div id='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
+  <br><br><br><br>\
   <a href='" + baseUrl +
   "' id ='error-url'>Full Products Page Link</a>\
   </div>"

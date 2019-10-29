@@ -62,12 +62,14 @@ chrome.browserAction.onClicked.addListener(function(tab){
 
 // Disables extension when refreshing or navigating to a new page
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-	if(changeInfo.status === "loading") {
-    for (var i = 0; i < browserTabs.length; i++){
-      if (browserTabs[i].id === currentTab){
-        browserTabs[i].state = false;
-        chrome.browserAction.setIcon({path: "img/box48-b.png", tabId:browserTabs[tab].id});
+  chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    var currentTab = tabs[0].id;
+    if(changeInfo.status === "loading") {
+      for (var i = 0; i < browserTabs.length; i++){
+        if (browserTabs[i].id === currentTab){
+          disable(i);
+        }
       }
-    }
-  };
+    };
+  });
 });
