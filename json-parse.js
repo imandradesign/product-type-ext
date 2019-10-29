@@ -14,17 +14,20 @@ document.body.appendChild(overlay_div);
 /********************************************************
 Check if URL is a Category/Tag view of a Product Page
 *****************************************************/
-currentUrl = window.location.href;
-split = currentUrl.split("?");
+var currentUrl = window.location.href;
+var split = currentUrl.split("?");
+var baseUrl = split[0];
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if(split[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div id='error-message'>\
-  <div style='font-size:12px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:<br><br><span id='non-filtered-url'></span></div>\
+  determineOverlay.innerHTML = "<div id='error-message' style='font-size:14px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
+  <br><br><br>\
+  <a href='" + baseUrl +
+  "' id ='error-url'>" + baseUrl +
+  "</a>\
   </div>"
-  document.getElementById("non-filtered-url").textContent = split[0];
   }
 else{
 
@@ -142,4 +145,4 @@ async function info() {
   }
 
   info();
-} 
+}
