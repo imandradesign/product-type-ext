@@ -65,7 +65,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:20px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
+        <div style='font-size:18px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
