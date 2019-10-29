@@ -39,7 +39,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='error-message'>\
-        <p style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace Products Page while logged out.</p>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace Products Page while logged out.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
@@ -48,12 +48,17 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <p style='color:#186976;'>Physical Products: <span id='physicalCount'></span></p>\
-        <p style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></p>\
-        <p style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></p>\
-        <p style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></p>\
+        <div style='color:#186976;'>Physical Products: <span id='physicalCount'></span></div>\
+        <br>\
+        <div style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></div>\
+        <br>\
+        <div style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></div>\
+        <br>\
+        <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
+        <br>\
         <hr>\
-        <p style='color:black'>Subscription Products: <span id='subCount'></span></p>\
+        <br>\
+        <div style='color:black'>Subscription Products: <span id='subCount'></span></div>\
         </div>";
 
 

@@ -2,8 +2,8 @@
 #prod-type-overlay {
   position: fixed !important;
   display: block !important;
-  width: 210px !important;
-  height: 200px !important;
+  width: 220px !important;
+  height: 220px !important;
   top: 1% !important;
   right: 1% !important;
   bottom: 0 !important;
@@ -20,9 +20,11 @@
   padding-top: 25px !important;
   padding-left: 12px !important;
   padding-right: 12px !important;
-  font: 700 Helvetica, sans-serif !important;
+  font-family: Helvetica, sans-serif !important;
   font-size: 15px !important;
+  font-weight: 600 !important;
   line-height: 1em !important;
+  letter-spacing: 0.7px;
   color: rgb(65,65,65) !important;
 }
 
@@ -33,7 +35,8 @@
   padding-right: 20px !important;
   text-align: center !important;
   font-size: 22px !important;
-  font: 400 Helvetica, sans-serif !important;
+  font-family: Helvetica, sans-serif !important;
+  font-weight: 700 !important;
   line-height: 15px !important;
   color: rgb(65,65,65);
 }
