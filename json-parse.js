@@ -85,25 +85,25 @@ async function info() {
           prodOpacity.className = "prod-opacity";
 
           // If an image loads, it changes the opacity to 50% for each image.
-          prodOpacity.innerHTML = elementCss + " img.loaded {opacity: 0.5;}";
+          prodOpacity.innerHTML = elementCss + " img, ProductListImageLoader {opacity: 0.5 !important;}";
           document.head.appendChild(prodOpacity);
 
           // Checks JSON data for the product type and updates the styles for individual products on the page and adjusts the product type counter in the overlay.
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
-            prodColor.innerHTML = elementCss + '{outline: 5px solid #186976 !important; background-color: #186976 !important;};';
+            prodColor.innerHTML = elementCss + '{outline: 6px solid #186976 !important; background-color: #186976 !important;};';
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #BCDE28 !important; background-color: #BCDE28 !important};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #BCDE28 !important; background-color: #BCDE28 !important};';
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #3EF5A4 !important; background-color: #3EF5A4};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #3EF5A4 !important; background-color: #3EF5A4};';
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #5F0D73 !important; background-color: #5F0D73};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #5F0D73 !important; background-color: #5F0D73};';
               giftCardCount ++;
             }
 
