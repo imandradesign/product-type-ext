@@ -28,21 +28,25 @@ chrome.browserAction.onClicked.addListener(function(tab){
     var currentTab = tabs[0].id;
     var alreadyAdded = false;
 
+    // Loops through the browserTabs array to see if your current tab has been added yet or not
     for (let i = 0; i < browserTabs.length; i++){
       if (browserTabs[i].id === currentTab){
         alreadyAdded = true;
       }
     }
 
+    // If the tab hasn't been added it's pushed to the array
     if (alreadyAdded === false){
       browserTabs.push({id:currentTab , state:true});
 
+      // Loops through the browserTabs array and enables extension just for this tab
       for (let i = 0; i < browserTabs.length; i++){
         if (browserTabs[i].id === currentTab){
           enable(i);
         }
       }
     } else if (alreadyAdded === true){
+      // If the tab has been added to the array already, it loops through the browserTabs array to find the current tab ID and either enable or disable the function based on the tab state
       for (let i = 0; i < browserTabs.length; i++){
         if (browserTabs[i].id === currentTab){
           if (browserTabs[i].state === false){
@@ -56,7 +60,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
   });
 });
 
-// Disable extension when navigating to a new page
+// Disables extension when refreshing or navigating to a new page
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	if(changeInfo.status === "loading") {
     for (var i = 0; i < browserTabs.length; i++){
