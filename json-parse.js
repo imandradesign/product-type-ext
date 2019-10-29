@@ -1,6 +1,6 @@
-/**********************************************************
+/********************************************************
 Add visible DIV element to display the product count on the page
-*********************************************************/
+*****************************************************/
 // Variant to create DIV element
 var overlay_div = document.createElement('div');
 
@@ -11,9 +11,9 @@ overlay_div.innerHTML = "<div id='prod-type-overlay'>\
 // Append DIV to the page
 document.body.appendChild(overlay_div);
 
-/**********************************************************
+/********************************************************
 Finds the JSON URL and finds the product type for each item on the Products Page
-*********************************************************/
+*****************************************************/
 
 // Finds page URL with slug and creates JSON URL
 var json_url = window.location.href + '?format=json';
@@ -30,7 +30,7 @@ async function info() {
       var myJson = await response.json();
     } catch (error) {
         // Error handling
-        alert("Please log out of Squarespace to use this extension.");
+        alert("Please log out of Squarespace to use this extension. If you're viewing a page that filters by tag or category, go to the direct Products Page instead.");
         document.getElementById("prod-type-overlay").remove();
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
@@ -85,6 +85,7 @@ async function info() {
           prodOpacity.innerHTML = elementCss + " img.loaded {opacity: 0.5;}";
           document.head.appendChild(prodOpacity);
 
+          // Checks JSON data for the product type and updates the styles for individual products on the page and adjusts the product type counter in the overlay.
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
             prodColor.innerHTML = elementCss + '{outline: 5px solid #186976 !important; background-color: #186976 !important;};';
@@ -103,6 +104,7 @@ async function info() {
               giftCardCount ++;
             }
 
+          // Checks for subscription products and updates the count
           if (products[i].isSubscribable === true){
             subscriptionCount ++;
           }
