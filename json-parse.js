@@ -109,7 +109,7 @@ async function info() {
 
           // Checks for subscription products, updates the count, and add a checkmark next to individual products
           if (products[i].isSubscribable === true){
-            element.innerHTML += "<div class='sub-check' style='font-size:27px;'>✓</div>"
+            element.innerHTML += "<div class='sub-check' style='font-size:13px; color:white;'><span style='font-size:27px;'>✓</span> Subscription</div>"
             subscriptionCount ++;
           }
         }
