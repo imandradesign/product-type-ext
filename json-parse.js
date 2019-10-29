@@ -1,4 +1,4 @@
-// Linking the font using Google Fonts
+// Linking the font using open source Google Fonts
 var link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
 link.setAttribute('type', 'text/css');
