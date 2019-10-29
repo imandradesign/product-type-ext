@@ -39,7 +39,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='error-message'>\
-        <p style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace Products Page while logged out.</p>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
@@ -48,12 +48,15 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <p style='color:#186976;'>Physical Products: <span id='physicalCount'></span></p>\
-        <p style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></p>\
-        <p style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></p>\
-        <p style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></p>\
+        <div style='color:#186976;'>Physical Products: <span id='physicalCount'></span></div>\
+        <br>\
+        <div style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></div>\
+        <br>\
+        <div style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></div>\
+        <br>\
+        <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
-        <p style='color:black'>Subscription Products: <span id='subCount'></span></p>\
+        <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
 
 
@@ -82,30 +85,31 @@ async function info() {
           prodOpacity.className = "prod-opacity";
 
           // If an image loads, it changes the opacity to 50% for each image.
-          prodOpacity.innerHTML = elementCss + " img.loaded {opacity: 0.5;}";
+          prodOpacity.innerHTML = elementCss + " img, ProductListImageLoader {opacity: 0.5 !important;}";
           document.head.appendChild(prodOpacity);
 
           // Checks JSON data for the product type and updates the styles for individual products on the page and adjusts the product type counter in the overlay.
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
-            prodColor.innerHTML = elementCss + '{outline: 5px solid #186976 !important; background-color: #186976 !important;};';
+            prodColor.innerHTML = elementCss + '{outline: 6px solid #186976 !important; background-color: #186976 !important;};';
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #BCDE28 !important; background-color: #BCDE28 !important};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #BCDE28 !important; background-color: #BCDE28 !important};';
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #3EF5A4 !important; background-color: #3EF5A4};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #3EF5A4 !important; background-color: #3EF5A4};';
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 5px solid #5F0D73 !important; background-color: #5F0D73};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #5F0D73 !important; background-color: #5F0D73};';
               giftCardCount ++;
             }
 
-          // Checks for subscription products and updates the count
+          // Checks for subscription products, updates the count, and add a checkmark next to individual products
           if (products[i].isSubscribable === true){
+            element.innerHTML += "<div class='sub-check' style='font-size:13px; color:white;'><span style='font-size:27px;'>✓</span> Subscription</div>"
             subscriptionCount ++;
           }
         }

@@ -1,5 +1,6 @@
 // Variable to determine if extension is active or inactive
 var isActive = false;
+var browserTabs = [];
 
 // Enable browser extension
 function enable(tab){
@@ -29,7 +30,6 @@ function disable(tab){
 
 // Clicking the extension icon runs the json-parse.js or remove.js file to enable or disable
 chrome.browserAction.onClicked.addListener(function(tab){
-
   if (isActive === false){
     enable();
   } else if (isActive === true){
