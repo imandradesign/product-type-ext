@@ -22,7 +22,7 @@ if(split[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div id='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
   <br><br><br><br>\
   <a href='" + baseUrl +
   "' id ='error-url'>Full Products Page Link</a>\
@@ -57,8 +57,15 @@ async function info() {
         // Create HTML error message when visitor isn't on a Squarespace Products Page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
-        determineOverlay.innerHTML = "<div id='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
+        determineOverlay.innerHTML = "<div class='error-message'>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
+        </div>"
+      } else if (myJson['item']) {
+        // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
+        var determineOverlay = document.getElementById("prod-type-overlay");
+
+        determineOverlay.innerHTML = "<div class='error-message'>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:20px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
