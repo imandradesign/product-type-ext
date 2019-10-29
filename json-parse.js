@@ -39,7 +39,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace Products Page while logged out.</div>\
+        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
@@ -55,9 +55,7 @@ async function info() {
         <div style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></div>\
         <br>\
         <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
-        <br>\
         <hr>\
-        <br>\
         <div style='color:black'>Subscription Products: <span id='subCount'></span></div>\
         </div>";
 
