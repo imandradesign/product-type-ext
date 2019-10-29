@@ -29,9 +29,10 @@ In order to use this extension, you must be viewing a Squarespace Product Page. 
 
 ### Special Thanks
 Thanks to Ross Donaldson for leading the Code Camp classes and inspiring us to hack away. 
+
 Special thanks to all others involved in various aspects of Code Camp, from leading classes, answering questions, making things happen behind the scene, bringing treats, and making the space for learning and coding!
 
-#### Program Flow
+## Program Flow - Initial Draft
 The following program flow was drafted on the first day of our Hackweek project.
 
 1. Find the Products Page URL slug from the HTML
