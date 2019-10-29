@@ -25,7 +25,7 @@ In order to use this extension, you must be viewing a Squarespace Product Page. 
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/css)
 
 ## Authors
-Imandra Mckenzie, Ralph Daub, and Deb Margarella
+<b>Imandra Mckenzie, Ralph Daub, and Deb Margarella</b>
 
 ### Special Thanks
 Thanks to Ross Donaldson for leading the Code Camp classes and inspiring us to hack away. 
