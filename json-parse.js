@@ -56,7 +56,7 @@ async function info() {
         <br>\
         <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
-        <div style='color:black'>Subscription Products: <span id='subCount'></span></div>\
+        <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
 
 
@@ -107,8 +107,9 @@ async function info() {
               giftCardCount ++;
             }
 
-          // Checks for subscription products and updates the count
+          // Checks for subscription products, updates the count, and add a checkmark next to individual products
           if (products[i].isSubscribable === true){
+            element.innerHTML += "<div class='sub-check' style='font-size:27px;'>✓</div>"
             subscriptionCount ++;
           }
         }

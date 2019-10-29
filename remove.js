@@ -28,5 +28,15 @@ function removeOpacityByClass(className){
     }
 }
 
+// Removes ✓ checkmark from individual subscription products
+function removeSubCheckByClass(className){
+    var element = document.getElementsByClassName('sub-check');
+    while(element.length > 0){
+        element[0].parentNode.removeChild(element[0]);
+    }
+}
+
+
 removeColorByClass("prod-colors");
 removeOpacityByClass("prod-opacity");
+removeSubCheckByClass("sub-check");

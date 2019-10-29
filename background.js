@@ -1,5 +1,6 @@
 // Variable to determine if extension is active or inactive
 var isActive = false;
+var browserTabs = [];
 
 // Enable browser extension
 function enable(tab){
