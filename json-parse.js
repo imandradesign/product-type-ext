@@ -15,16 +15,24 @@ document.body.appendChild(overlay_div);
 Check if URL is a Category/Tag view of a Product Page
 *****************************************************/
 var currentUrl = window.location.href;
-var split = currentUrl.split("?");
-var baseUrl = split[0];
+var currentSlug = window.location.pathname;
+var splitFilter = currentUrl.split("?");
+var splitConfig = currentSlug.split("/");
+var filterUrl = splitFilter[0];
+var configSlug = splitConfig[1];
+
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
-if(split[1] != null){
+if (configSlug === "config"){
+  var determineOverlay = document.getElementById("prod-type-overlay");
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; font: 400 Helvetica, sans-serif !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  </div>"
+} else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:15px !important; line-height:16px !important; font: 400 Helvetica, sans-serif !important; padding-top:45px !important;'>You may be viewing a filtered page. Please navigate to the non-filtered page below:\
-  <br><br><br><br>\
-  <a href='" + baseUrl +
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:18px; line-height:18px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>You may be viewing a filtered page. Please navigate to the unfiltered page below:\
+  <br><br><br>\
+  <a href='" + filterUrl +
   "' id ='error-url'>Full Products Page Link</a>\
   </div>"
   }
@@ -49,7 +57,7 @@ async function info() {
       var myJson = await response.json();
     } catch (error) {
         // Error handling
-        alert("Please log out of Squarespace to use this extension. If you're viewing a page that filters by tag or category, go to the direct Products Page instead.");
+        alert("Please log out and view a Squarespace website Products Page to use this extension.");
         document.getElementById("prod-type-overlay").remove();
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
@@ -58,14 +66,14 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <span id='pp-error'>Products Page</span> while logged out.</div>\
+        <div style='font-size:22px !important; line-height:25px !important; font: 400 Helvetica, sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
         </div>"
       } else if (myJson['item']) {
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:18px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span id='pp-error'>Products Page</span>.</div>\
+        <div style='font-size:18px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span class='pp-error'>Products Page</span>.</div>\
         </div>"
       }
       // If the page is a Product Page, continue on.
