@@ -48,11 +48,11 @@ var findComments = function(el) {
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if (configSlug === "config"){
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:50px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
   </div>"
 } else if (sqspCheck !== " This is Squarespace. "){
     var determineOverlay = document.getElementById("prod-type-overlay");
-    determineOverlay.innerHTML = "<div class='error-message' style='font-size:19px; line-height:19px !important; padding-top:35px !important;'>This is not a Squarespace website.<br><br>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.\
+    determineOverlay.innerHTML = "<div class='error-message' style='font-size:20px; line-height:22px !important; padding-top:50px !important;'>Please navigate to a Squarespace website <br><span class='pp-error'>Products Page</span><br> while logged out to view data.\
     </div>"
   } else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
