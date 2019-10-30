@@ -43,7 +43,7 @@ if (configSlug === "config"){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:18px; line-height:18px !important; padding-top:30px !important;'>You may be viewing a filtered page. Please navigate to the unfiltered page below:\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:18px; line-height:18px !important; padding-top:40px !important;'>You may be viewing a filtered page. Please navigate to the unfiltered page below:\
   <br><br><br>\
   <a href='" + filterUrl +
   "' id ='error-url'>Full Products Page Link</a>\
@@ -79,7 +79,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:25px !important; padding-top:60px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
+        <div style='font-size:22px !important; line-height:25px !important; padding-top:50px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
         </div>"
       } else if (myJson['item']) {
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
