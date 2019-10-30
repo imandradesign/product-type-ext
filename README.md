@@ -27,7 +27,7 @@ In order to use this extension, you must be viewing a Squarespace Product Page. 
 ## Authors
 <b>Imandra Mckenzie, Ralph Daub, and Deb Margarella</b>
 
-### Special Thanks
+## Special Thanks
 Thanks to Ross Donaldson for leading the Code Camp classes and inspiring us to hack away. 
 
 Special thanks to all others involved in various aspects of Code Camp, from leading classes, answering questions, making things happen behind the scene, bringing treats, and making the space for learning and coding!
