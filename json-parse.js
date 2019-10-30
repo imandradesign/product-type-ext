@@ -112,9 +112,9 @@ async function info() {
         determineOverlay.innerHTML = "<div id='pd-text'>\
         <div style='color:#186976;'>⟰ Physical Products: <span id='physicalCount'></span></div>\
         <br>\
-        <div style='color:#BCDE28;'>☲ Digital Products: <span id='digitalCount'></span></div>\
+        <div style='color:#31D8D0;'>☲ Digital Products: <span id='digitalCount'></span></div>\
         <br>\
-        <div style='color:#3EF5A4;'>▤ Service Products: <span id='serviceCount'></span></div>\
+        <div style='color:#019c7c;'>▤ Service Products: <span id='serviceCount'></span></div>\
         <br>\
         <div style='color:#5F0D73;'>⫸ Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
@@ -158,12 +158,12 @@ async function info() {
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #BCDE28 !important; background-color: #BCDE28 !important};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #31D8D0 !important; background-color: #31D8D0 !important};';
               element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>☲</span> Digital<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #3EF5A4 !important; background-color: #3EF5A4};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #019c7c !important; background-color: #019c7c};';
               element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>▤</span> Service<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               serviceCount ++;
             } else if (products[i].productType == 4){
