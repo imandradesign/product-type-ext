@@ -1,3 +1,16 @@
+// Linking the font using Google Fonts
+var link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('type', 'text/css');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700');
+document.head.appendChild(link);
+
+var link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('type', 'text/css');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto&display=swap');
+document.head.appendChild(link);
+
 /********************************************************
 Add visible DIV element to display the product count on the page
 *****************************************************/
@@ -24,13 +37,13 @@ var configSlug = splitConfig[1];
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if (configSlug === "config"){
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; font: 400 Helvetica, sans-serif !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; font: 400 Roboto, sans-serif !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
   </div>"
 } else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:18px; line-height:18px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>You may be viewing a filtered page. Please navigate to the unfiltered page below:\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:18px; line-height:18px !important; font: 400 Roboto, sans-serif !important; padding-top:40px !important;'>You may be viewing a filtered page. Please navigate to the unfiltered page below:\
   <br><br><br>\
   <a href='" + filterUrl +
   "' id ='error-url'>Full Products Page Link</a>\
@@ -66,15 +79,14 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:25px !important; font: 400 Helvetica, sans-serif !important; padding-top:60px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
-        </div>"
+        <div style='font-size:22px !important; line-height:25px !important; font: 400 Roboto, sans-serif !important; padding-top:52px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view       </div>"
       } else if (myJson['item']) {
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:18px !important; line-height:22px !important; font: 400 Helvetica, sans-serif !important; padding-top:40px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span class='pp-error'>Products Page</span>.</div>\
-        </div>"
+        <div style='font-size:18px !important; line-height:22px !important; font: 400 Roboto, sans-serif !important; padding-top:40px !important;'>It looks like you're viewing an individual product.<br><br>Please navigate to a full <span class='pp-error'>Products Page</span>.</div>\
+"
       }
       // If the page is a Product Page, continue on.
       else {
