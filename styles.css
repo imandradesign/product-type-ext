@@ -43,7 +43,7 @@
 }
 
 /* Adjust style for the words "Products Page" specifically in the error message */
-#pp-error {
+.pp-error {
   color: #1FA187;
 }
 
@@ -55,7 +55,7 @@
 
 #error-url {
   text-decoration:underline;
-  display: block;
+  font-size: 15px !important;
 }
 
 #error-url:hover {
