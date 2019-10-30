@@ -45,6 +45,7 @@
 /* Adjust style for the words "Products Page" specifically in the error message */
 .pp-error {
   color: #1FA187;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Adjust styles for the "Subscription Products:" text in the overlay */
@@ -56,6 +57,7 @@
 #error-url {
   text-decoration:underline;
   font-size: 15px !important;
+  font-family: 'Roboto', sans-serif;
 }
 
 #error-url:hover {
