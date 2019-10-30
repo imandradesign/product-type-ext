@@ -73,13 +73,21 @@ chrome.browserAction.onClicked.addListener(function(tab){
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
     var currentTab = tabs[0].id;
-    
-    if(changeInfo.status === "loading") {
+
+    if (changeInfo.status === "loading") {
       for (var i = 0; i < browserTabs.length; i++){
         if (browserTabs[i].id === currentTab){
           disable(i);
         }
       }
-    };
+    }
+
+    if (changeInfo.url){
+      for (var i = 0; i < browserTabs.length; i++){
+        if (browserTabs[i].id === currentTab){
+          disable(i);
+        }
+      }
+    }
   });
 });
