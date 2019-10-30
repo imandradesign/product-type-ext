@@ -110,13 +110,13 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <div style='color:#186976;'>■ Physical Products: <span id='physicalCount'></span></div>\
+        <div style='color:#186976;'>⟰ Physical Products: <span id='physicalCount'></span></div>\
         <br>\
-        <div style='color:#BCDE28;'>■ Digital Products: <span id='digitalCount'></span></div>\
+        <div style='color:#BCDE28;'>☲ Digital Products: <span id='digitalCount'></span></div>\
         <br>\
-        <div style='color:#3EF5A4;'>■ Service Products: <span id='serviceCount'></span></div>\
+        <div style='color:#3EF5A4;'>▤ Service Products: <span id='serviceCount'></span></div>\
         <br>\
-        <div style='color:#5F0D73;'>■ Gift Cards: <span id='giftCardCount'></span></div>\
+        <div style='color:#5F0D73;'>⫸ Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
         <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
@@ -154,24 +154,29 @@ async function info() {
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
             prodColor.innerHTML = elementCss + '{outline: 6px solid #186976 !important; background-color: #186976 !important;};';
+            element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>⟰</span> Physical<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
               prodColor.innerHTML = elementCss + '{outline: 6px solid #BCDE28 !important; background-color: #BCDE28 !important};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>☲</span> Digital<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
               prodColor.innerHTML = elementCss + '{outline: 6px solid #3EF5A4 !important; background-color: #3EF5A4};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>▤</span> Service<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
               prodColor.innerHTML = elementCss + '{outline: 6px solid #5F0D73 !important; background-color: #5F0D73};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>⫸</span> Gift Card<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               giftCardCount ++;
             }
 
           // Checks for subscription products, updates the count, and add a checkmark next to individual products
           if (products[i].isSubscribable === true){
-            element.innerHTML += "<div class='sub-check' style='font-size:13px; color:white;'><span style='font-size:27px;'>✓</span> Subscription</div>"
+            var subsAdd = element.getElementsByClassName("subs")[0];
+            subsAdd.style = "";
             subscriptionCount ++;
           }
         }

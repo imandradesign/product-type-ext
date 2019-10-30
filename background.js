@@ -4,11 +4,15 @@ var browserTabs = [];
 // Enable browser extension
 function enable(tab){
   browserTabs[tab].state = true;
+
   chrome.browserAction.setIcon({path: "img/tag48.png", tabId:browserTabs[tab].id});
+
   chrome.browserAction.setTitle({title: "Squarespace Product Highlighter: ON"});
+
   chrome.tabs.executeScript({
     file: 'json-parse.js'
   });
+
   chrome.tabs.insertCSS({
     file: 'styles.css'
   });
@@ -17,8 +21,11 @@ function enable(tab){
 // Disable browser extension
 function disable(tab){
   browserTabs[tab].state = false;
+
   chrome.browserAction.setIcon({path: "img/tag48-b.png", tabId:browserTabs[tab].id});
+
   chrome.browserAction.setTitle({title: "Squarespace Product Highlighter: OFF"});
+
   chrome.tabs.executeScript({
     file: 'remove.js'
   });
@@ -66,6 +73,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
     var currentTab = tabs[0].id;
+    
     if(changeInfo.status === "loading") {
       for (var i = 0; i < browserTabs.length; i++){
         if (browserTabs[i].id === currentTab){
