@@ -34,12 +34,33 @@ var splitConfig = currentSlug.split("/");
 var filterUrl = splitFilter[0];
 var configSlug = splitConfig[1];
 
+// Find the "This is Squarespace comment in site's HTML"
+var findComments = function(el) {
+  var arr = [];
+  for(var i = 0; i < el.childNodes.length; i++) {
+    var node = el.childNodes[i];
+    if(node.nodeType === 8) {
+        arr.push(node);
+    } else {
+        arr.push.apply(arr, findComments(node));
+      }
+    }
+    return arr;
+  };
+
+  var commentNodes = findComments(document);
+  var sqspCheck = commentNodes[0].nodeValue;
+
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if (configSlug === "config"){
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:50px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
   </div>"
-} else if (splitFilter[1] != null){
+} else if (sqspCheck !== " This is Squarespace. "){
+    var determineOverlay = document.getElementById("prod-type-overlay");
+    determineOverlay.innerHTML = "<div class='error-message' style='font-size:19px; line-height:19px !important; padding-top:35px !important;'>This is not a Squarespace website.<br><br>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.\
+    </div>"
+  } else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
   // Point the user to the non-filtered URL which is stored in split[0]
   var determineOverlay = document.getElementById("prod-type-overlay");
