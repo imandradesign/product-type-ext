@@ -7,9 +7,9 @@
       "Ralph Daub",
       "Deb Margarella"],
     "icons": {
-      "16": "img/box16-b.png",
-      "48": "img/box48-b.png",
-      "128": "img/box128-b.png"
+      "16": "img/tag16-b.png",
+      "48": "img/tag48-b.png",
+      "128": "img/tag128-b.png"
     },
     "permissions": [
       "activeTab"],
@@ -19,10 +19,11 @@
     },
     "browser_action": {
       "default-icon": {
-        "16": "img/box16-b.png",
-        "48": "img/box48-b.png",
-        "128": "img/box128-b.png"
-      }
+        "16": "img/tag16-b.png",
+        "48": "img/tag48-b.png",
+        "128": "img/tag128-b.png"
+      },
+      "default-title": "Squarespace Product Highlighter: OFF"
     },
     "manifest_version": 2
   }
