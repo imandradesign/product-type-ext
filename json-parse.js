@@ -37,7 +37,7 @@ var configSlug = splitConfig[1];
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if (configSlug === "config"){
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:50px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
   </div>"
 } else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
@@ -79,7 +79,7 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div class='error-message'>\
-        <div style='font-size:22px !important; line-height:25px !important; padding-top:60px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
+        <div style='font-size:22px !important; line-height:25px !important; padding-top:50px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
         </div>"
       } else if (myJson['item']) {
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
@@ -95,13 +95,13 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <div style='color:#186976;'>Physical Products: <span id='physicalCount'></span></div>\
+        <div style='color:#186976;'>■ Physical Products: <span id='physicalCount'></span></div>\
         <br>\
-        <div style='color:#BCDE28;'>Digital Products: <span id='digitalCount'></span></div>\
+        <div style='color:#BCDE28;'>■ Digital Products: <span id='digitalCount'></span></div>\
         <br>\
-        <div style='color:#3EF5A4;'>Service Products: <span id='serviceCount'></span></div>\
+        <div style='color:#3EF5A4;'>■ Service Products: <span id='serviceCount'></span></div>\
         <br>\
-        <div style='color:#5F0D73;'>Gift Cards: <span id='giftCardCount'></span></div>\
+        <div style='color:#5F0D73;'>■ Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
         <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
