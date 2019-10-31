@@ -1,8 +1,10 @@
 // Variables for keeping track of browser tabs
 var browserTabs = [];
+console.log(browserTabs);
 
 // Enable browser extension
 function enable(tab){
+  disable(tab);
   browserTabs[tab].state = true;
 
   chrome.browserAction.setIcon({path: "img/tag48.png", tabId:browserTabs[tab].id});
@@ -71,8 +73,8 @@ chrome.browserAction.onClicked.addListener(function(tab){
 
 // Disables extension when refreshing or navigating to a new page
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
-    var currentTab = tabs[0].id;
+  chrome.tabs.query({currentWindow: true, active: true}, function(tab){
+    var currentTab = tab[0].id;
 
     if (changeInfo.status === "loading") {
       for (var i = 0; i < browserTabs.length; i++){

@@ -1,3 +1,4 @@
+console.log("Current browser tab enabled");
 // Linking the font using Google Fonts
 var link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
@@ -96,7 +97,7 @@ async function info() {
         determineOverlay.innerHTML = "<div class='error-message'>\
         <div style='font-size:22px !important; line-height:25px !important; padding-top:50px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
         </div>"
-      } else if (myJson['item']) {
+      } else if (myJson['item']){
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
         var determineOverlay = document.getElementById("prod-type-overlay");
 

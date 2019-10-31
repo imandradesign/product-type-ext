@@ -1,17 +1,10 @@
+console.log("Current browser tab disabled");
 // Remove overlay HTML from the page
 var determineOverlay = document.getElementById('prod-type-overlay');
 
 if (determineOverlay !== null){
   document.getElementById('prod-type-overlay').remove();
 }
-
-// Remove error text from the page
-var determineError = document.getElementById('error-message');
-
-if (determineError !== null){
-  document.getElementById('error-message').remove();
-}
-
 
 // Remove style classes that apply color and change image opacity to individual products on the page
 function removeColorByClass(className){
@@ -28,7 +21,7 @@ function removeOpacityByClass(className){
     }
 }
 
-// Removes ✓ checkmark from individual subscription products
+// Removes product type and icons from individual products
 function removeTypeCheckByClass(className){
     var element = document.getElementsByClassName('type-check');
     while(element.length > 0){

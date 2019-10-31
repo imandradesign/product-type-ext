@@ -12,7 +12,9 @@
       "128": "img/tag128-b.png"
     },
     "permissions": [
-      "activeTab"],
+      "activeTab",
+      "idle"
+    ],
     "background": {
       "scripts": ["background.js"],
       "persistent": false
