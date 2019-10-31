@@ -10,10 +10,11 @@ This project was developed as a Code Camp Hackweek project.
 
 ## Installation
 
-1. Download the extension from this link: [https://link](https://link)
+1. Download the extension file "product-type-ext.CRX" from this link: [https://link - update](https://link)
 2. Open the Chrome browser extension panel from this link: [chrome://extensions/](chrome://extensions/)
 3. Enable "Developer Mode" in the top-right corner.
-4. ?????Install App????? - (update this with correct steps, depending on whether we pack extension, and where we host it)
+4. Drag and drop the file "product-type-ext.CRX" into the Chrome Extensions panel. The text "Drop to install" should appear.
+5. Drop the file into the window, and click on the button "Add extension".
 
 ## How to use?
 In order to use this extension, you must be viewing a Squarespace Product Page. Just click on the Squarespace Product Type Highlighter extension, and watch the magic happen.
@@ -28,12 +29,15 @@ In order to use this extension, you must be viewing a Squarespace Product Page. 
 <b>Imandra Mckenzie, Ralph Daub, and Deb Margarella</b>
 
 ## Special Thanks
-Thanks to Ross Donaldson for leading the Code Camp classes and inspiring us to hack away. 
+Thanks to everyone involved who made this iteration of Code Camp a reality!
 
-Special thanks to all others involved in various aspects of Code Camp, from leading classes, answering questions, making things happen behind the scene, bringing treats, and making the space for learning and coding!
 
-## Program Flow - Initial Draft
-The following program flow was drafted on the first day of our Hackweek project.
+<!--
+## Program Flow - Initial Draft. 
+
+Left this here as a comment for historical purposes.
+
+The following program flow was drafted on the first day of our Hackweek project. Much changed as we developed the extension.
 
 1. Find the Products Page URL slug from the HTML
  * < link rel="canonical" href=“BUILT-IN DOMAIN & SLUG”>
@@ -52,3 +56,4 @@ The following program flow was drafted on the first day of our Hackweek project.
 5. Build visible display overlaying the page for the user
 
 6. Correlate the count for each product type to the correct line in the display
+-->
