@@ -5,14 +5,6 @@ if (determineOverlay !== null){
   document.getElementById('prod-type-overlay').remove();
 }
 
-// Remove error text from the page
-var determineError = document.getElementById('error-message');
-
-if (determineError !== null){
-  document.getElementById('error-message').remove();
-}
-
-
 // Remove style classes that apply color and change image opacity to individual products on the page
 function removeColorByClass(className){
     var element = document.getElementsByClassName('prod-colors');
@@ -28,9 +20,9 @@ function removeOpacityByClass(className){
     }
 }
 
-// Removes ✓ checkmark from individual subscription products
-function removeSubCheckByClass(className){
-    var element = document.getElementsByClassName('sub-check');
+// Removes product type and icons from individual products
+function removeTypeCheckByClass(className){
+    var element = document.getElementsByClassName('type-check');
     while(element.length > 0){
         element[0].parentNode.removeChild(element[0]);
     }
@@ -39,4 +31,4 @@ function removeSubCheckByClass(className){
 
 removeColorByClass("prod-colors");
 removeOpacityByClass("prod-opacity");
-removeSubCheckByClass("sub-check");
+removeTypeCheckByClass("sub-check");

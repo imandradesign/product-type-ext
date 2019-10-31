@@ -2,13 +2,7 @@
 var link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
 link.setAttribute('type', 'text/css');
-link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700');
-document.head.appendChild(link);
-
-var link = document.createElement('link');
-link.setAttribute('rel', 'stylesheet');
-link.setAttribute('type', 'text/css');
-link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto&display=swap');
+link.setAttribute('href', 'https://fonts.googleapis.com/css?family=Cabin|Montserrat&display=swap');
 document.head.appendChild(link);
 
 /********************************************************
@@ -54,11 +48,11 @@ var findComments = function(el) {
 // If there is a "?" in the URL, and text after the question mark, guide the user to non-filtered page.
 if (configSlug === "config"){
   var determineOverlay = document.getElementById("prod-type-overlay");
-  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:55px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
+  determineOverlay.innerHTML = "<div class='error-message' style='font-size:22px !important; line-height:25px !important; padding-top:50px !important;'>View a <br><span class='pp-error'>Products Page</span><br> while logged out to view the data.\
   </div>"
 } else if (sqspCheck !== " This is Squarespace. "){
     var determineOverlay = document.getElementById("prod-type-overlay");
-    determineOverlay.innerHTML = "<div class='error-message' style='font-size:19px; line-height:19px !important; padding-top:40px !important;'>This is not a Squarespace website. Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.\
+    determineOverlay.innerHTML = "<div class='error-message' style='font-size:20px; line-height:22px !important; padding-top:50px !important;'>Please navigate to a Squarespace website <br><span class='pp-error'>Products Page</span><br> while logged out to view data.\
     </div>"
   } else if (splitFilter[1] != null){
   // Create HTML error message when visitor isn't on a Squarespace Products Page
@@ -102,7 +96,7 @@ async function info() {
         determineOverlay.innerHTML = "<div class='error-message'>\
         <div style='font-size:22px !important; line-height:25px !important; padding-top:50px;'>Please navigate to a Squarespace <br><span class='pp-error'>Products Page</span><br> to view data.</div>\
         </div>"
-      } else if (myJson['item']) {
+      } else if (myJson['item']){
         // If user is viewing an individual product instead of a Products Page it asks them to go back to a Products page
         var determineOverlay = document.getElementById("prod-type-overlay");
 
@@ -116,13 +110,13 @@ async function info() {
         var determineOverlay = document.getElementById("prod-type-overlay");
 
         determineOverlay.innerHTML = "<div id='pd-text'>\
-        <div style='color:#5603AD;'>Physical Products: <span id='physicalCount'></span></div>\
+        <div style='color:#186976;'>⟰ Physical Products: <span id='physicalCount'></span></div>\
         <br>\
-        <div style='color:#B2A3FF;'>Digital Products: <span id='digitalCount'></span></div>\
+        <div style='color:#31D8D0;'>☲ Digital Products: <span id='digitalCount'></span></div>\
         <br>\
-        <div style='color:#B3E9C7;'>Service Products: <span id='serviceCount'></span></div>\
+        <div style='color:#019c7c;'>▤ Service Products: <span id='serviceCount'></span></div>\
         <br>\
-        <div style='color:#FFE2AF;'>Gift Cards: <span id='giftCardCount'></span></div>\
+        <div style='color:#5F0D73;'>⫸ Gift Cards: <span id='giftCardCount'></span></div>\
         <hr>\
         <div style='color:black; font-size:14px !important;'>✓ Subscription Products: <span id='subCount'></span></div>\
         </div>";
@@ -159,25 +153,30 @@ async function info() {
           // Checks JSON data for the product type and updates the styles for individual products on the page and adjusts the product type counter in the overlay.
           if (products[i].productType == 1){
             document.head.appendChild(prodColor);
-            prodColor.innerHTML = elementCss + '{outline: 6px solid #5603AD !important; background-color: #5603AD !important;};';
+            prodColor.innerHTML = elementCss + '{outline: 6px solid #186976 !important; background-color: #186976 !important;};';
+            element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>⟰</span> Physical<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
             physicalCount ++;
             } else if (products[i].productType == 2){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #B2A3FF !important; background-color: #B2A3FF !important};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #31D8D0 !important; background-color: #31D8D0 !important};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>☲</span> Digital<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               digitalCount ++;
             } else if (products[i].productType == 3){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #B3E9C7 !important; background-color: #B3E9C7};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #019c7c !important; background-color: #019c7c};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>▤</span> Service<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               serviceCount ++;
             } else if (products[i].productType == 4){
               document.head.appendChild(prodColor);
-              prodColor.innerHTML = elementCss + '{outline: 6px solid #FFE2AF !important; background-color: #FFE2AF};';
+              prodColor.innerHTML = elementCss + '{outline: 6px solid #5F0D73 !important; background-color: #5F0D73};';
+              element.innerHTML += "<div class='type-check' style='font-size:12px; color:white;'><span style='font-size:20px;'>⫸</span> Gift Card<span class='subs' style='display:none'>, <span style='font-size:20px;'>✓</span> Subscription</span></div>"
               giftCardCount ++;
             }
 
           // Checks for subscription products, updates the count, and add a checkmark next to individual products
           if (products[i].isSubscribable === true){
-            element.innerHTML += "<div class='sub-check' style='font-size:13px; color:white;'><span style='font-size:27px;'>✓</span> Subscription</div>"
+            var subsAdd = element.getElementsByClassName("subs")[0];
+            subsAdd.style = "";
             subscriptionCount ++;
           }
         }

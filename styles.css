@@ -2,7 +2,7 @@
 #prod-type-overlay {
   position: fixed;
   display: block;
-  width: 235px;
+  width: 245px;
   height: 210px;
   top: 2%;
   right: 1%;
@@ -20,23 +20,21 @@
   padding-top: 23px;
   padding-left: 18px;
   padding-right: 18px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: 17px;
   font-weight: 900;
   line-height: 1em;
   letter-spacing: 0.7px;
   color: rgb(65,65,65);
-  -webkit-text-stroke-width: 0.001px;
-  -webkit-text-stroke-color: black;
 }
 
-/* Error message text is user isn't on a Squarespace Products Page */
+/* Error message text if user isn't on a Squarespace Products Page */
 .error-message {
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
   font-size: 22px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-weight: 700;
   line-height: 15px;
   color: black;
@@ -44,7 +42,7 @@
 
 /* Adjust style for the words "Products Page" specifically in the error message */
 .pp-error {
-  color: #B3E9C7;
+  color: #1FA187;
 }
 
 /* Adjust styles for the "Subscription Products:" text in the overlay */
