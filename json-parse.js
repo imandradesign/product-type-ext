@@ -1,4 +1,3 @@
-console.log("Current browser tab enabled");
 // Linking the font using Google Fonts
 var link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');

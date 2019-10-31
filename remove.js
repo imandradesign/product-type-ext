@@ -1,4 +1,3 @@
-console.log("Current browser tab disabled");
 // Remove overlay HTML from the page
 var determineOverlay = document.getElementById('prod-type-overlay');
 
