@@ -63,8 +63,7 @@ if (configSlug === "config"){
   <a href='" + filterUrl +
   "' id ='error-url'>Full Products Page Link</a>\
   </div>"
-  }
-else{
+} else {
 
 /********************************************************
 Finds the JSON URL and finds the product type for each item on the Products Page
@@ -85,7 +84,7 @@ async function info() {
       var myJson = await response.json();
     } catch (error) {
         // Error handling
-        alert("Please log out and view a Squarespace website Products Page to use this extension.");
+        alert("Wasn't able to pull JSON data. Please visit a Squarespace Products Page while logged out.");
         document.getElementById("prod-type-overlay").remove();
     } finally {
       // If the page is not a Product Page (collection type 13), throw an error
