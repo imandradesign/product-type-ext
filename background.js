@@ -1,6 +1,5 @@
 // Variables for keeping track of browser tabs
 var browserTabs = [];
-console.log(browserTabs);
 
 // Enable browser extension
 function enable(tab){
