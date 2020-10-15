@@ -1,5 +1,5 @@
 # Squarespace Product Type Highlighter
-This is a Chrome browser extension that works in a Squarespace Product Page, highlighting and counting the different product types.
+This is a Chrome browser extension that works when viewing a Squarespace Products Page, highlighting and counting the different product types.
 
 ## Motivation
 This extension helps troubleshoot issues customers may write to us about in regards to products and Product Page behaviors. 
